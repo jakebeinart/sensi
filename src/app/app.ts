@@ -25,7 +25,7 @@ export class App {
   constructor() {
     // generate weeks from first entry to today
     const todayDatestring = new Date().toISOString().split('T')[0];
-    const earliestDate = '2026-02-01'; //Object.keys(this.entries()).sort().at(0) || todayDatestring;
+    const earliestDate = Object.keys(this.entries()).sort().at(0) || todayDatestring;
     const allDates = this.getDatesInRange(earliestDate, todayDatestring);
     this.weeks = this.buildWeekGrid(allDates);
 
