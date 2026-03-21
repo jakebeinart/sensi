@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MoodService } from '../../services/mood.service';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe, LowerCasePipe } from '@angular/common';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroCheck, heroXMark } from '@ng-icons/heroicons/outline';
 import { DataService } from '../../services/data.service';
@@ -17,7 +17,7 @@ import { AutofocusDirective } from '../../services/autofocus.directive';
 
 @Component({
   selector: 'app-menu',
-  imports: [ReactiveFormsModule, DatePipe, NgIcon, AutofocusDirective],
+  imports: [ReactiveFormsModule, DatePipe, LowerCasePipe, NgIcon, AutofocusDirective, CommonModule],
   templateUrl: './menu.html',
   styleUrl: './menu.css',
   providers: [provideIcons({ heroCheck, heroXMark })],
