@@ -1,0 +1,73 @@
+{
+  "configVersion": 1,
+  "timestamp": 1774119481801,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main-RUSWI656.js",
+        "/manifest.webmanifest",
+        "/styles-X4JMSWI3.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/icons/icon-144x144.png",
+        "/icons/icon-152x152.png",
+        "/icons/icon-192x192.png",
+        "/icons/icon-512x512.png",
+        "/icons/icon-72x72.png",
+        "/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/favicon.ico": "d3684d4b690cc6c7b9cd6e5b18f500e511567bfd",
+    "/icons/icon-144x144.png": "96708118ec39a7b779926bf3f567eef9db26a710",
+    "/icons/icon-152x152.png": "6a9c371e80adeea84d0d3480e0af71d35ad4ecab",
+    "/icons/icon-192x192.png": "25c71cd903cdaca7610e7e1005533b4eb97f3376",
+    "/icons/icon-512x512.png": "ef8464b80c4fa7243d38d48bcbf33a5d3f043b7e",
+    "/icons/icon-72x72.png": "d635cd8cce604240361c7c14e99679bed45c39ef",
+    "/icons/icon-96x96.png": "a9096d638544d667e95e2760f35e36fd643d761c",
+    "/index.html": "a38bf6b356de1d01cbffca11db78375764c19ed8",
+    "/main-RUSWI656.js": "075a2f074ef965cb5fcc7372750384763e3ea75c",
+    "/manifest.webmanifest": "2bf8469c886d2d0af22983c1fee3267a701efedc",
+    "/styles-X4JMSWI3.css": "0f4d54fbb51f7a3e950749914239ecab79e4f4be"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
