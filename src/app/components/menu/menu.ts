@@ -7,7 +7,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MoodService } from '../../services/mood.service';
 import { DatePipe } from '@angular/common';
 import { NgIcon, provideIcons } from '@ng-icons/core';
@@ -23,7 +23,10 @@ import { AutofocusDirective } from '../../services/autofocus.directive';
   providers: [provideIcons({ heroCheck, heroXMark })],
 })
 export class Menu implements OnChanges {
-  score: FormControl<number> = new FormControl();
+  score: FormControl<number | undefined | null> = new FormControl(null, [
+    Validators.min(1),
+    Validators.max(10),
+  ]);
   notes: FormControl<string> = new FormControl();
   @Input() date: string | null = null;
   @Output() close: EventEmitter<null> = new EventEmitter<null>();
@@ -39,7 +42,7 @@ export class Menu implements OnChanges {
   }
 
   save() {
-    if (!this.date) {
+    if (!this.date || !this.score.value) {
       return;
     }
 

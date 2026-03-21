@@ -26,7 +26,7 @@ export class MoodService {
     return total / entries.length;
   });
 
-  getColorClass(rating: number | undefined) {
+  getColorClass(rating: number | null | undefined) {
     switch (rating) {
       case 1:
         return 'bg-red-600';

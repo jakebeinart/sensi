@@ -2,13 +2,13 @@
   <div
     class="transition-colors duration-1000 ease-in-out w-64 h-64 rounded-md flex flex-col text-gray-300"
     [class]="moodService.getColorClass(score.value)"
-    [class.text-white]="!!score.value"
-    [class.bg-white]="!score.value"
+    [class.text-white]="!!score.value && score.valid"
+    [class.bg-white]="!score.value || score.invalid"
   >
-    <div class="text-gray-300 pl-4 pt-2 absolute" [class.text-white]="!!score.value">
+    <div class="text-gray-300 pl-4 pt-2 absolute" [class.text-white]="!!score.value && score.valid">
       {{ date | date: 'M/dd' }}
     </div>
-    @if (!!score.value) {
+    @if (!!score.value && score.valid) {
       <ng-icon
         (click)="save()"
         class="right-4 top-2 absolute text-2xl cursor-pointer"
