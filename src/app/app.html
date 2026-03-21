@@ -19,6 +19,12 @@
     }
   </div>
   @if (selectedDate) {
-    <app-menu class="mx-auto" [date]="selectedDate" (close)="selectedDate = null"></app-menu>
+    <app-menu
+      class="mx-auto"
+      animate.enter="fade-in-animation"
+      animate.leave="fade-out-animation"
+      [date]="selectedDate"
+      (close)="selectedDate = null"
+    ></app-menu>
   }
 </div>

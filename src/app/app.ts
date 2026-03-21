@@ -35,9 +35,6 @@ export class App {
     }
   }
 
-  //select today on open if it is not filled out yet
-  // select most recent contiguous day if it is not filled out yet?
-
   getDatesInRange(startDateString: string, endDateString: string): string[] {
     const dates = [];
     let currentDate = new Date(startDateString);
