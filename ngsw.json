@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1774121211600,
+  "timestamp": 1774121613542,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main-RUSWI656.js",
+        "/main-PNAXT5UR.js",
         "/manifest.webmanifest",
         "/styles-X4JMSWI3.css"
       ],
@@ -46,8 +46,8 @@
     "/icons/icon-512x512.png": "ef8464b80c4fa7243d38d48bcbf33a5d3f043b7e",
     "/icons/icon-72x72.png": "d635cd8cce604240361c7c14e99679bed45c39ef",
     "/icons/icon-96x96.png": "a9096d638544d667e95e2760f35e36fd643d761c",
-    "/index.html": "a38bf6b356de1d01cbffca11db78375764c19ed8",
-    "/main-RUSWI656.js": "075a2f074ef965cb5fcc7372750384763e3ea75c",
+    "/index.html": "769d61a3142f75dbd41f126dbc445d6cb6bac1d5",
+    "/main-PNAXT5UR.js": "886cca122bdc90963fc2b63a0227fdc505cd4017",
     "/manifest.webmanifest": "2bf8469c886d2d0af22983c1fee3267a701efedc",
     "/styles-X4JMSWI3.css": "0f4d54fbb51f7a3e950749914239ecab79e4f4be"
   },
