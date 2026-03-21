@@ -1,6 +1,8 @@
 {
   "name": "sensi",
   "short_name": "sensi",
+  "theme_color": "#05df72",
+  "background_color": "#FFFFFF",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
