@@ -42,13 +42,13 @@ export class Menu implements OnChanges {
   }
 
   save() {
-    if (!this.date || !this.score.value) {
+    if (!this.date || !this.score.value || this.score.invalid) {
       return;
     }
 
     this.dataService.upsert({
       date: this.date,
-      score: this.score.value,
+      score: Math.round(Number(this.score.value)),
       notes: this.notes.value,
     });
     this.close.emit();

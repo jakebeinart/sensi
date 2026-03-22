@@ -54,7 +54,7 @@ export class MoodService {
   }
 
   getColorClass(rating: number | null | undefined) {
-    switch (rating) {
+    switch (Math.round(Number(rating))) {
       case 1:
         return 'bg-red-700';
       case 2:
