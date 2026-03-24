@@ -14,7 +14,6 @@ export class DataService {
 
     // Effect to save data to localStorage whenever the signal updates
     effect(() => {
-      console.log('effect', this.entries());
       const entries = this.entries();
       localStorage.setItem('mood-entries', JSON.stringify(entries));
     });
@@ -26,11 +25,6 @@ export class DataService {
       ...entries,
       [entry.date]: entry,
     }));
-    console.log('upsert', this.entries());
-    // if(Object.hasOwn(this._entries(), entry.date)){
-    // }else{
-
-    // }
   }
 
   getEntry(date: string) {

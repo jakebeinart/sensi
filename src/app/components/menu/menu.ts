@@ -34,7 +34,6 @@ export class Menu implements OnChanges {
   dataService = inject(DataService);
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
     const newDate = changes['date'].currentValue;
     const entry = this.dataService.getEntry(newDate);
     this.score.setValue(entry?.score);

@@ -20,18 +20,17 @@ export class App {
   weeks: string[][] = [];
   entries = this.dataService.entries;
   selectedDate: string | null = null;
-  todayString: string = new Date().toISOString().split('T')[0];
+  todayString: string = new Date().toLocaleDateString('en-CA');
 
   constructor() {
     // generate weeks from first entry to today
-    const todayDatestring = new Date().toISOString().split('T')[0];
-    const earliestDate = Object.keys(this.entries()).sort().at(0) || todayDatestring;
-    const allDates = this.getDatesInRange(earliestDate, todayDatestring);
+    const earliestDate = Object.keys(this.entries()).sort().at(0) || this.todayString;
+    const allDates = this.getDatesInRange(earliestDate, this.todayString);
     this.weeks = this.buildWeekGrid(allDates);
 
     // this.dataService.getEntry();
-    if (!Object.hasOwn(this.entries(), todayDatestring)) {
-      this.selectedDate = todayDatestring;
+    if (!Object.hasOwn(this.entries(), this.todayString)) {
+      this.selectedDate = this.todayString;
     }
   }
 
