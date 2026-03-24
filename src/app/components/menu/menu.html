@@ -6,7 +6,7 @@
     [class.bg-white]="!score.value || score.invalid"
   >
     <div class="text-gray-300 pl-4 pt-3 absolute" [class.text-white]="!!score.value && score.valid">
-      {{ date | date: 'MMM d' | lowercase }}
+      {{ date | date: 'E, MMM d' | lowercase }}
     </div>
     @if (!!score.value && score.valid) {
       <ng-icon
