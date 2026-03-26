@@ -1,14 +1,14 @@
 <div class="fixed top-4 left-1/2 -translate-x-1/2 z-50 shadow-xl">
   <div
-    class="transition-colors duration-1000 ease-in-out w-64 h-64 rounded-md flex flex-col text-gray-300"
+    class="transition-colors duration-1000 ease-in-out w-64 h-64 rounded-md flex flex-col text-gray-500"
     [class]="moodService.getColorClass(score.value)"
     [class.text-white]="!!score.value && score.valid"
     [class.bg-white]="!score.value || score.invalid"
   >
-    <div class="text-gray-300 pl-4 pt-3 absolute" [class.text-white]="!!score.value && score.valid">
+    <div class="text-gray-500 pl-4 pt-3 absolute" [class.text-white]="!!score.value && score.valid">
       {{ date | date: 'E, MMM d' | lowercase }}
     </div>
-    @if (!!score.value && score.valid) {
+    @if ((!!score.value && score.valid) || (!score.value && notes.value)) {
       <ng-icon
         (click)="save()"
         class="right-3 top-2 absolute text-3xl cursor-pointer"

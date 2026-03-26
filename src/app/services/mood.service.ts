@@ -5,28 +5,7 @@ import { MoodEntry } from './mood.model';
   providedIn: 'root',
 })
 export class MoodService {
-  // The main signal holds an array of all entries
-  private readonly _moodEntries = signal<MoodEntry[]>([]);
-
-  // Expose a read-only signal for components to use
-  readonly moodEntries = this._moodEntries.asReadonly();
-
-  // Add a new entry
-  addEntry(entry: MoodEntry): void {
-    this._moodEntries.update((entries) =>
-      [...entries, entry].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()),
-    );
-  }
-
-  // Example of a computed signal for derived data
-  readonly averageScore = computed(() => {
-    const entries = this.moodEntries();
-    if (entries.length === 0) return 0;
-    const total = entries.reduce((sum, entry) => sum + entry.score, 0);
-    return total / entries.length;
-  });
-
-  getColorClass2(rating: number | null | undefined) {
+  oldColorClass(rating: number | null | undefined) {
     switch (rating) {
       case 1:
         return 'bg-red-600';

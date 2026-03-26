@@ -1,5 +1,5 @@
 export interface MoodEntry {
   date: string;
-  score: number;
+  score: number | null;
   notes: string;
 }
