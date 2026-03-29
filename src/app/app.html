@@ -6,7 +6,7 @@
           <div
             class="flex-1 aspect-square transition-colors duration-1000 cursor-pointer text-center flex justify-center text-white"
             [class]="moodService.getColorClass(entries()[date]?.score)"
-            [class.bg-gray-500]="selectedDate === date"
+            [class.bg-gray-500]="selectedDate === date && !entries()[date]?.score"
             [class.animate-pulse]="selectedDate === date"
             (click)="selectedDate = date"
           >
