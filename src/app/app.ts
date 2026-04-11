@@ -20,7 +20,7 @@ export class App {
   weeks: string[][] = [];
   entries = this.dataService.entries;
   selectedDate: string | null = null;
-  todayString: string = new Date().toLocaleDateString('en-CA');
+  todayString: string = '2026-04-12'; //new Date().toLocaleDateString('en-CA');
 
   constructor() {
     // generate weeks from first entry to today
@@ -53,8 +53,8 @@ export class App {
   }
 
   getWeekDays(anyDate: Date): string[] {
-    const monday = startOfWeek(anyDate, { weekStartsOn: 1 });
-    return Array.from({ length: 7 }, (_, i) => format(addDays(monday, i), 'yyyy-MM-dd'));
+    const sunday = startOfWeek(anyDate, { weekStartsOn: 0 });
+    return Array.from({ length: 7 }, (_, i) => format(addDays(sunday, i), 'yyyy-MM-dd'));
   }
 
   // Expands a date range into an array of full Mon–Sun weeks
@@ -62,8 +62,8 @@ export class App {
     if (dates.length === 0) return [];
 
     const sorted = [...dates].sort();
-    const firstMonday = startOfWeek(parseISO(sorted[0]), { weekStartsOn: 1 });
-    const lastMonday = startOfWeek(parseISO(sorted[sorted.length - 1]), { weekStartsOn: 1 });
+    const firstMonday = startOfWeek(parseISO(sorted[0]), { weekStartsOn: 0 });
+    const lastMonday = startOfWeek(parseISO(sorted[sorted.length - 1]), { weekStartsOn: 0 });
 
     const weeks: string[][] = [];
     let cursor = firstMonday;
