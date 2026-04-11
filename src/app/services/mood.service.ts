@@ -58,4 +58,34 @@ export class MoodService {
         return '';
     }
   }
+
+  getDifficultyBgStyle(difficulty: number | null | undefined): { backgroundColor: string } {
+    if (!difficulty) {
+      return { backgroundColor: '' };
+    }
+    // Interpolate: teal(1) → gold(5) → coral(10)
+    const stops: Record<number, string> = {
+      1: 'var(--color-accent-low)',
+      5: 'var(--color-accent-mid)',
+      10: 'var(--color-accent-high)',
+    };
+
+    // For exact stops, return the CSS variable directly
+    if (stops[difficulty]) {
+      return { backgroundColor: stops[difficulty] };
+    }
+
+    // For in-between steps, blend via color-mix
+    if (difficulty < 5) {
+      const pct = ((difficulty - 1) / 4) * 100;
+      return {
+        backgroundColor: `color-mix(in oklch, var(--color-accent-mid) ${pct}%, var(--color-accent-low))`,
+      };
+    } else {
+      const pct = ((difficulty - 5) / 5) * 100;
+      return {
+        backgroundColor: `color-mix(in oklch, var(--color-accent-high) ${pct}%, var(--color-accent-mid))`,
+      };
+    }
+  }
 }

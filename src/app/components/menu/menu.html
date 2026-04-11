@@ -1,7 +1,7 @@
 <div class="fixed top-4 left-1/2 -translate-x-1/2 z-50 shadow-xl">
   <div
     class="transition-colors duration-1000 ease-in-out w-64 h-64 rounded-md flex flex-col text-gray-500"
-    [class]="moodService.getColorClass(score.value)"
+    [style]="moodService.getDifficultyBgStyle(score.value)"
     [class.text-white]="!!score.value && score.valid"
     [class.bg-white]="!score.value || score.invalid"
   >

@@ -10,3 +10,13 @@ body {
 .bg-seven {
   background-color: #a2c026;
 }
+
+:root {
+  /* --color-accent-low: #f27752; */
+  --color-accent-low: #c10007;
+  /* --color-accent-mid: #d0b749; */
+  --color-accent-mid: #c9bd2b;
+  /* --color-accent-mid: #f0ad4e; */
+  --color-accent-high: #00a63e;
+  /* --color-accent-high: #32beb8; */
+}
