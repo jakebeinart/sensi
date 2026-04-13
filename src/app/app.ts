@@ -20,7 +20,7 @@ export class App {
   weeks: string[][] = [];
   entries = this.dataService.entries;
   selectedDate: string | null = null;
-  todayString: string = '2026-04-12'; //new Date().toLocaleDateString('en-CA');
+  todayString: string = new Date().toLocaleDateString('en-CA');
 
   constructor() {
     // generate weeks from first entry to today
